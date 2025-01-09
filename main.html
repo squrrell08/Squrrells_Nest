@@ -1,12 +1,35 @@
+
 <!-- Main HTML file (main.html) -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <title>Main HTML Document</title>
+    <style>
+        iframe {
+            border: none;
+        }
+    </style>
 </head>
 <body>
-    <h1>Welcome to the Main Page</h1>
-    <iframe src="embedded.html" width="600" height="400" frameborder="0"></iframe>
+    <h1>just testing :)</h1>
+    <iframe id="myIframe" src="emu.html" width="600" height="400"></iframe>
+    <br>
+    <button onclick="toggleFullScreen()">Fullscreen</button>
+
+    <script>
+        function toggleFullScreen() {
+            let iframe = document.getElementById("myIframe");
+            if (iframe.requestFullscreen) {
+                iframe.requestFullscreen();
+            } else if (iframe.mozRequestFullScreen) { // Firefox
+                iframe.mozRequestFullScreen();
+            } else if (iframe.webkitRequestFullscreen) { // Chrome, Safari and Opera
+                iframe.webkitRequestFullscreen();
+            } else if (iframe.msRequestFullscreen) { // IE/Edge
+                iframe.msRequestFullscreen();
+            }
+        }
+    </script>
 </body>
 </html>
