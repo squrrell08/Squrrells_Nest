@@ -1,0 +1,85 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>placeholder page</title>
+
+    <!-- CSS Styling -->
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+
+        nav {
+            background-color: #333;
+            padding: 1em;
+        }
+
+        nav ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            text-align: center;
+        }
+
+        nav ul li {
+            display: inline;
+            margin: 0 1em;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: #fff;
+            font-weight: bold;
+        }
+
+        nav ul li a:hover {
+            color: #FFD700;
+        }
+
+        nav ul li a.active {
+            color: #FFD700;
+        }
+
+        .content {
+            padding: 2em;
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="emu.html">Emulator</a></li>
+            <li><a href="eglrcraft.html">Minecraft</a></li>
+            <li><a href="placeholder.html">placeholder</a></li>
+        </ul>
+    </nav>
+    
+    <div class="content">
+        <h3> anywhere but here</h3>
+        <!-- Content for each page goes here -->
+    </div>
+    
+    <!-- JavaScript -->
+    <script>
+        window.onload = function() {
+            const currentLocation = location.href;
+            const menuItem = document.querySelectorAll('nav ul li a');
+            const menuLength = menuItem.length;
+
+            for (let i = 0; i < menuLength; i++) {
+                if (menuItem[i].href === currentLocation) {
+                    menuItem[i].className = "active";
+                }
+            }
+        };
+    </script>
+</body>
+</html>
+
